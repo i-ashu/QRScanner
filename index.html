@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Imperial 1T</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+
+   <script type="text/javascript" src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js" ></script>	
+  <!-- Place your favicon.ico and apple-touch-icon.png in the template root directory -->
+  <link href="favicon.ico" rel="shortcut icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="lib/animate-css/animate.min.css" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link href="css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+  <div id="preloader"></div>
+
+  <!--==========================
+  Hero Section
+  ============================-->
+  <section id="hero">
+    <div class="hero-container">
+      <div class="wow fadeIn">
+        <div class="hero-logo">
+          <img class="" src="img/logo.png" alt="Imperial">
+        </div>
+
+        <h1>Welcome to Imperial 1T</h1>
+        <h2>We <span class="rotating">Scan QR Code, Create OTP, Validate OTP</span></h2>
+        <div class="actions">
+          <a href="#preview" class="btn-get-started">Scan QR</a>
+          <a href="#verifyotp" class="btn-services">Validate OTP</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!--   --==========================
+  About Section
+  ============================-->
+  <section id="about">
+    <div class="container wow fadeInUp">
+      <div class="row">
+        <div class="col-md-12">
+          <h3 class="section-title">Scan Your Code Here.</h3>
+          <div class="section-title-divider"></div>
+          <p class="section-description"></p>
+        </div>
+      </div>
+    </div>
+    <div class="container about-container wow fadeInUp">
+      <div class="row">
+        <center>
+        	<br>
+        	<br>
+            <video id="preview"></video>
+			    <script>
+			        let scanner = new Instascan.Scanner(
+			            {
+			                video: document.getElementById('preview')
+			            }
+			        );
+			        scanner.addListener('scan', function(content) {
+			            alert('Scanned content: ' + content);
+			            window.open(content, "_blank");
+			        });
+			        Instascan.Camera.getCameras().then(cameras => 
+			        {
+			            if(cameras.length > 0){
+			                scanner.start(cameras[0]);
+			            } else {
+			                console.error("Error!!! No Camera found.");
+			            }
+			        });
+			    </script>
+        </center>  
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!--==========================
+  Porfolio Section
+  ============================-->
+  <section id="verifyotp">
+    <div class="container wow fadeInUp">
+      <div class="row">
+        <div class="col-md-12">
+          <h3 class="section-title">Verify OTP</h3>
+          <div class="section-title-divider"></div>
+          <p class="section-description">Please enter 6 digits correct OTP for verification.<br>OTP has been successfully generated and been sent to Customer's phone.<br> Please contact him to get the OTP.</p>
+        </div>
+      </div>
+
+      <div class="row">
+          <form name="otpverify"action="/verifyotp" method="post">      
+			  <input name="recvotp" type="text" class="otp-input" placeholder="Enter OTP" />
+			  <input type="submit" value="SUBMIT"/>
+		  </form>
+      </div>
+    </div>
+  </section>
+  <!-- ==========================
+  Team Section
+  ============================ -->
+  <section id="team">
+    <div class="container wow fadeInUp">
+      <div class="row">
+        <div class="col-md-12">
+          <h3 class="section-title">Our Team</h3>
+          <div class="section-title-divider"></div>
+          <p class="section-description"></p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-3">
+          <div class="member">
+            <div class="pic"><img src="img/team.png" alt=""></div>
+            <h4>Omkar Deep Singh</h4>
+            <span>IoT Intern 1</span>
+            <div class="social">
+              <a href="https://www.twitter.com/"><i class="fa fa-twitter"></i></a>
+              <a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a>
+              <a href="https://www.linkedin.com/in/"><i class="fa fa-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="member">
+            <div class="pic"><img src="img/team.png" alt=""></div>
+            <h4>Yashas P</h4>
+            <span>IoT Intern 2</span>
+            <div class="social">
+              <a href="https://www.twitter.com/"><i class="fa fa-twitter"></i></a>
+              <a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a>
+              <a href="https://www.linkedin.com/in/"><i class="fa fa-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="member">
+            <div class="pic"><img src="img/team.png" alt=""></div>
+            <h4>Ayush Dhar</h4>
+            <span>ML Intern 1</span>
+            <div class="social">
+              <a href="https://www.twitter.com/"><i class="fa fa-twitter"></i></a>
+              <a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a>
+              <a href="https://www.linkedin.com/in/"><i class="fa fa-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="member">
+            <div class="pic"><img src="img/team.png" alt=""></div>
+            <h4>Ashutosh Ranjan</h4>
+            <span>ML Intern 2</span>
+            <div class="social">
+              <a href="https://www.twitter.com/ashutosh_sam"><i class="fa fa-twitter"></i></a>
+              <a href="https://www.facebook.com/definition.a"><i class="fa fa-facebook"></i></a>
+              <a href="https://www.linkedin.com/in/i-ashu"><i class="fa fa-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section> 
+
+
+  <!--==========================
+  Footer
+============================-->
+  <footer id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="copyright">
+            &copy; Copyright <strong>One Team</strong>. All Rights Reserved
+          </div>
+          <div class="credits">
+            Designed by <a href="https://instagram.com/definition.a">Aashu.</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- #footer -->
+
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+  <!-- Required JavaScript Libraries -->
+  <script src="lib/jquery/jquery.min.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+  <script src="lib/superfish/hoverIntent.js"></script>
+  <script src="lib/superfish/superfish.min.js"></script>
+  <script src="lib/morphext/morphext.min.js"></script>
+  <script src="lib/wow/wow.min.js"></script>
+  <script src="lib/stickyjs/sticky.js"></script>
+  <script src="lib/easing/easing.js"></script>
+
+  <!-- Template Specisifc Custom Javascript File -->
+  <script src="js/custom.js"></script>
+  <script src="js/instascan.min.js"></script>
+
+
+</body>
+
+</html>
